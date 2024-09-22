@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/signup', { username, password });
+      const response = await axios.post('https://chat-website-a5jj.onrender.com//signup', { username, password });
       login(response.data);
       navigate('/chat');
     } catch (error) {

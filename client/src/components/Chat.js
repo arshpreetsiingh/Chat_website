@@ -29,7 +29,7 @@ function Chat() {
   }, []);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000', {
+    const newSocket = io('https://chat-website-a5jj.onrender.com/', {
       auth: { token: user.token }
     });
     setSocket(newSocket);
@@ -70,7 +70,7 @@ function Chat() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/users', {
+        const response = await axios.get('https://chat-website-a5jj.onrender.com//users', {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         const fetchedUsers = response.data.filter((u) => u._id !== user.user._id);
@@ -87,7 +87,7 @@ function Chat() {
     if (selectedUser) {
       const fetchMessages = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/messages/${selectedUser._id}`, {
+          const response = await axios.get(`https://chat-website-a5jj.onrender.com//messages/${selectedUser._id}`, {
             headers: { Authorization: `Bearer ${user.token}` }
           });
           setMessages(response.data);

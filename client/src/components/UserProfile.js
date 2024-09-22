@@ -25,7 +25,7 @@ const UserProfile = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/users/${user.user._id}`, {
+      const response = await axios.get(`https://chat-website-a5jj.onrender.com//users/${user.user._id}`, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       const userData = response.data;
@@ -54,7 +54,7 @@ const UserProfile = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:5000/users/${user.user._id}`,
+        `https://chat-website-a5jj.onrender.com//users/${user.user._id}`,
         updatedUser,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
